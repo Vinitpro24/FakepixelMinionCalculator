@@ -101,6 +101,11 @@
             <label for="minionType">Select Minion Type:</label>
             <select id="minionType">
                 <option value="">-- Select Type --</option>
+                <option value="SLAYER">SLAYER  </option>
+                <option value="FARMING">FARMING  </option>
+                <option value="FORAGING">FORAGING  </option>
+                <option value="MINING">MINING  </option>
+                <option value="COMBAT">COMBAT  </option>
                 <option value="b">Blaze  </option>
                 <option value="sl">Slime </option>
                 <option value="p">Pig </option>
@@ -147,10 +152,10 @@
                 <option value="spr">Spruce</option>
                 <option value="a">Acacia</option>
                 <option value="bi">Birch</option>
-                <option value="j">Jungle</option>
+                <option value="j">Jungle/option>
                 <option value="do">Dark Oak</option>
                 <option value="o">Oak</option>
-
+                 
 
                 
 
@@ -159,6 +164,7 @@
 
 
             </select>
+
         </div>
         
         <div class="form-group">
@@ -337,7 +343,84 @@
                 alert('Please enter valid values for all fields');
                 return;
             }
+            let bx1 = 0, bx2 = 0, bx3 = 0;
+            let set = 0;
             
+            // Determine the set based on minion type, second time
+            switch(minionType) {
+                case 'b':  //Blaze
+                case 'sl': //Slime
+                case 'c' : //Creeper
+                case 'm' : //Mithril
+                case 'q' : //Quartz
+                case 'i' ://Iron
+                case 'g' ://Gold
+                case 'em'://Emberald
+                case 'di'://Diamond
+                case 'co'://Coal
+                case 'coc'://Cocoa beans
+                    set = 1;
+                    break;
+                case 'p':  //Pig
+                case 'sh': //Sheep
+                case 'f': //Fishing
+                    set = 2;
+                    break;
+                case 'z':  // Zombie
+                case 'sk': //Skeleton
+                case 'sp': //Spider
+                case 'mc': //Magma Cube
+                case 'g' : //Ghast
+                case 'c' : //Clay
+                case 'sa': //Sand
+                case 'ob': //Obsidian 
+                case 'gr' ://Gravel
+                case 'es' ://End Stone
+                case 'cs' ://Cobblestone
+                case 'mu' ://Mushroom
+                case 'pu' ://Pumpkin
+                case 'w'://Wheat
+                case 'spr'://Spruce
+                case 'a'://Acacia
+                case 'bi'://Brich
+                case 'j'://Jungle
+                case 'do'://Dark Oak
+                case 'o'://Oak
+                    set = 3;
+                    break;
+                case 's':  // Snow
+                    set = 4;
+                    break;
+                case 'e': //Enderman
+                    set = 5;
+                    break;
+                case 'gl': //GlowStone
+                case 'r'://RedStone
+                case 'su'://Sugarcane
+                case 'po'://Potato
+                case 'ca'://Carrot
+                case 'cac'://Cactus
+                    set = 6;
+                    break;
+                case 'l': //lapis
+                    set = 7;
+                    break;
+                case 'i'://Ice
+                    set = 8;
+                    break;
+                case 'ra'://Rabbit
+                    set = 9;
+                    break;
+                case 'ch'://Chicken
+                    set = 10;
+                    break;
+                case 'me'://Melon
+                    set = 11;
+                    break;
+                case 'cow'://Cow
+                    set = 12;
+                    break;
+            }
 
             
             
