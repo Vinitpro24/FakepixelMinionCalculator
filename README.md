@@ -7,6 +7,7 @@ Join our discord server for latest updates
 # How To Use It
 
 **EXAMPLE**
+
 minion type: pig minion 🐖 
 
 Tier: 11
