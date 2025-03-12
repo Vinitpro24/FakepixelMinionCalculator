@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minion Cost Calculator </title>
     <style>
+        
         body {
             font-family: 'Arial', sans-serif;
             max-width: 600px;
@@ -16,12 +17,24 @@
             height: 100vh;
             background-size: cover;
             background-position: center;
-            }
+            
+           }
+          
+            
         h1 {
             text-align: center;
             color: #ffffff;
+            
         }  
-        
+        #myVideo {
+        position: fixed;
+        right: 0;
+         bottom: 0;
+         min-width: 100%;
+         min-height: 100%;
+         z-index: -1;
+       }
+      
         .calculator {
             background-color: white;
             padding: 20px;
@@ -89,79 +102,111 @@
             padding-top: 10px;
             border-top: 1px dashed #ddd;
         }
-    </style>
-</head>
-<body>
-    
-      
+        .star {
+	position: fixed;
+	pointer-events: none;
+}
 
-    <h1>Minion Cost Calculator [beta]</h1>
+.star:before, .star:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '\2726';
+	font-size: 9px;
+}
+
+.star:before {
+	color: transparent;
+	text-shadow: 0 0 3px rgb(250, 250, 174);
+}
+
+
+
+      
+    </style>
+    
+    
+</head>
+
+<body>
+     <title>My Page Title</title>
+  <link rel="icon" type="icon" href="favicon.ico">
+    
+    
+    <h1>Minion Cost Calculator Pro</h1>
     <div class="calculator">
         <div class="form-group">
             <label for="minionType">Select Minion Type:</label>
             <select id="minionType">
                 <option value="">-- Select Type --</option>
-                <option value="SLAYER">SLAYER  </option>
-                <option value="FARMING">FARMING  </option>
-                <option value="FORAGING">FORAGING  </option>
-                <option value="MINING">MINING  </option>
-                <option value="COMBAT">COMBAT  </option>
-                <option value="a">Acacia</option>  
-                <option value="bi">Birch</option>  
-                <option value="b">Blaze</option>  
-                <option value="cac">Cactus</option>  
-                <option value="ca">Carrot</option>  
-                <option value="ch">Chicken</option>  
-                <option value="c">Clay</option>  
-                <option value="co">Coal</option>  
-                <option value="coc">Cocoa beans</option>  
-                <option value="cs">Cobblestone</option>  
-                <option value="cow">Cow</option>  
-                <option value="c">Creeper</option>  
-                <option value="di">Diamond</option>  
-                <option value="do">Dark Oak</option>  
-                <option value="e">Enderman</option>  
-                <option value="em">Emberald</option>  
-                <option value="es">End Stone</option>  
-                <option value="f">Fishing</option>  
-                <option value="g">Ghast</option>  
-                <option value="gl">Glowstone</option>  
-                <option value="g">Gold</option>  
-                <option value="gr">Gravel</option>  
-                <option value="ic">Ice</option>  
-                <option value="i">Iron</option>  
-                <option value="j">Jungle</option>  
-                <option value="l">lapis</option>  
-                <option value="mc">Magma Cube</option>  
-                <option value="me">Melon</option>  
-                <option value="m">Mithril</option>  
-                <option value="mu">Mushroom</option>  
-                <option value="n">Nether Wart</option>  
-                <option value="o">Oak</option>  
-                <option value="ob">Obsidian</option>  
-                <option value="po">Potato</option>  
-                <option value="pu">Pumpkin</option>  
-                <option value="q">Quartz</option>  
-                <option value="ra">Rabbit</option>  
-                <option value="r">Redstone</option>  
-                <option value="sa">Sand</option>  
-                <option value="s">Sheep</option>  
-                <option value="sk">Skeleton</option>  
-                <option value="sl">Slime</option>  
-                <option value="s">Snow</option>  
-                <option value="sp">Spider</option>  
-                <option value="spr">Spruce</option>  
-                <option value="su">Sugarcane</option>  
-                <option value="w">Wheat</option>  
-                <option value="z">Zombie</option>  
-                 
-
                 
-
-
-
-
-
+                <optgroup label="COMBAT">
+                    <option value="b">Blaze</option>
+                    <option value="c">Creeper</option>
+                    <option value="e">Enderman</option>
+                    <option value="g">Ghast</option>
+                    <option value="mc">Magma Cube</option>
+                    <option value="p">Pig</option>
+                    <option value="s">Snow</option>
+                    <option value="sk">Skeleton</option>
+                    <option value="sl">Slime</option>
+                    <option value="sp">Spider</option>
+                    <option value="z">Zombie</option>
+                </optgroup>
+                
+                <optgroup label="MINING">
+                    <option value="cs">Cobblestone</option>
+                    <option value="co">Coal</option>
+                    <option value="di">Diamond</option>
+                    <option value="em">Emberald</option>
+                    <option value="es">End Stone</option>
+                    <option value="gl">Glowstone</option>
+                    <option value="g">Gold</option>
+                    <option value="gr">Gravel</option>
+                    <option value="i">Iron</option>
+                    <option value="ic">Ice</option>
+                    <option value="l">Lapis</option>
+                    <option value="m">Mithril</option>
+                    <option value="ob">Obsidian</option>
+                    <option value="q">Quartz</option>
+                    <option value="r">Redstone</option>
+                    <option value="sa">Sand</option>
+                </optgroup>
+                
+                <optgroup label="FARMING">
+                    <option value="ca">Carrot</option>
+                    <option value="cac">Cactus</option>
+                    <option value="ch">Chicken</option>
+                    <option value="cow">Cow</option>
+                    <option value="coc">Cocoa beans</option>
+                    <option value="me">Melon</option>
+                    <option value="mu">Mushroom</option>
+                    <option value="n">Nether Wart</option>
+                    <option value="po">Potato</option>
+                    <option value="p">Pig</option>
+                    <option value="pu">Pumpkin</option>
+                    <option value="ra">Rabbit</option>
+                    <option value="su">Sugarcane</option>
+                    <option value="w">Wheat</option>
+                </optgroup>
+                
+                <optgroup label="FORAGING">
+                    <option value="a">Acacia</option>
+                    <option value="bi">Birch</option>
+                    <option value="do">Dark Oak</option>
+                    <option value="j">Jungle</option>
+                    <option value="o">Oak</option>
+                    <option value="spr">Spruce</option>
+                </optgroup>
+                
+                <optgroup label="FISHING">
+                    <option value="c">Clay</option>
+                    <option value="f">Fishing</option>
+                </optgroup>
+                    <optgroup label="SLAYER">
+                    <option value="Highly in development">Inferno</option>
+                    </optgroup>
+                
             </select>
 
         </div>
@@ -229,7 +274,7 @@
             [64, 128, 256, 512, 8, 24, 64, 128, 256, 512, 256]
         ];
        
-
+        
         document.getElementById('minionType').addEventListener('change', function() {
             const minionType = this.value;
             const blockInputs = document.getElementById('normalBlockInputs');
@@ -336,7 +381,8 @@
             const normalBlockCost = parseInt(document.getElementById('normalBlock').value);
             const enchantedBlockCost = parseInt(document.getElementById('enchantedBlock').value);
             const superEnchantedBlockCost = parseInt(document.getElementById('superEnchantedBlock').value || 0);
-            
+    
+         
 
             if (!minionType || isNaN(tier) || isNaN(quantity) || tier < 1 || tier > 11 || quantity < 1) {
                 alert('Please enter valid values for all fields');
@@ -345,7 +391,7 @@
             let bx1 = 0, bx2 = 0, bx3 = 0;
             let set = 0;
             
-            // Determine the set based on minion type, second time
+            // Determine the set based on minion type, 3rd time
             switch(minionType) {
                 case 'b':  //Blaze
                 case 'sl': //Slime
